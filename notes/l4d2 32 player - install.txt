@@ -66,9 +66,6 @@ Source Mod (this requires metamod)
   https://www.sourcemod.net/downloads.php?branch=stable
 
 L4D Toolz (this requires metamod)
-  https://forums.alliedmods.net/showthread.php?t=93600&page=138
-  https://forums.alliedmods.net/showpost.php?p=1984946&postcount=1211
-
   https://forums.alliedmods.net/showpost.php?p=2756041&postcount=220
   https://github.com/Accelerator74/l4dtoolz/releases
 
