@@ -1,0 +1,197 @@
+
+########################################################
+## STEP 1A VIA STEAM
+########################################################
+Steam > Library > Left 4 Dead 2 Dedicated Server
+
+
+########################################################
+## STEP 2 VIA STEAM CMD
+########################################################
+steamcmd
+
+force_install_dir "D:\Games\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server"
+
+login anonymous 
+
+app_update 222860
+app_update 222860 validate
+
+quit 
+
+########################################################
+## STEP 2 FIX MAPS
+########################################################
+
+Note for both you might be missing some of the maps when you try via the map list
+... which is dumb because the maps are installed, the game isnt aware
+
+find | grep <mission> 
+
+#### pancakes autofix ... 
+
+gitbash location
+  cd "/d/Games/Launchers/Steam/steamapps/common/Left 4 Dead 2 Dedicated Server"
+  
+
+put this in copy_dlc_maps_part1.sh
+```
+#!/bin/bash
+cd "/d/Games/Launchers/Steam/steamapps/common/Left 4 Dead 2 Dedicated Server"
+MAPS=$( find | grep -E "c6|c7|c8|c10|c11|c12|c13|c14"| grep .bsp )  
+
+echo "" > copy_dlc_maps_part2.sh
+
+for MAP in $MAPS ;   do
+  echo "cp $MAP left4dead2/maps/" >> copy_dlc_maps_part2.sh
+done
+
+echo "now run "
+echo "  ./copy_dlc_maps_part2.sh"
+```
+
+then run the new script 
+(which will copy those files into "steamapps/common/Left 4 Dead 2 Dedicated Server/left4dead2" )
+
+
+
+########################################################
+## STEP 3 DOWNLOAD MODS
+########################################################
+  
+Metamod Source
+  https://www.sourcemm.net/downloads.php?branch=stable
+
+Source Mod (this requires metamod)
+  https://www.sourcemod.net/downloads.php?branch=stable
+
+L4D Toolz (this requires metamod)
+  https://forums.alliedmods.net/showthread.php?t=93600&page=138
+  https://forums.alliedmods.net/showpost.php?p=1984946&postcount=1211
+
+  https://forums.alliedmods.net/showpost.php?p=2756041&postcount=220
+  https://github.com/Accelerator74/l4dtoolz/releases
+
+Max players (8)
+  https://forums.alliedmods.net/showpost.php?p=826982
+  download the source file ( maxplayersaddon.sp)
+  make a compiled folder adjacent to maxplayersaddon.sp 
+  edit it from 8.0 to 32.0 and compile via SOURCE MOD
+  
+  "C:\workspace\l4d2-32-player-all-the-things\raw\sourcemod-1.11.0-git6934-windows\addons\sourcemod\scripting\compile.exe
+  "D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\left4dead2\addons\sourcemod\scripting\compile.exe"
+
+  output is in
+  {sp file location}\compiled
+
+Vote Mode  
+  https://forums.alliedmods.net/showthread.php?p=1658942
+
+  
+################################################################################
+## STEP 4 Install Metamod source ( https://wiki.alliedmods.net/Installing_Metamod:Source )  
+################################################################################
+extract meta mod into 
+  D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\left4dead2
+such that you have 
+  D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\left4dead2\addons
+  
+  
+  
+################################################################################
+## STEP 5 Install source mod ( https://wiki.alliedmods.net/Installing_SourceMod#Local_Server )  
+################################################################################
+extract source mod into 
+  D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\left4dead2
+such that you have 
+  D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\left4dead2\addons
+  D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\left4dead2\cfg
+  
+  
+################################################################################
+## STEP 6 Install L4dtoolz
+################################################################################
+extract source mod into 
+  D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\left4dead2
+such that you have 
+  D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\left4dead2\addons
+
+    
+################################################################################
+## STEP 7 Install maxplayersaddon
+################################################################################
+put maxplayersaddon.sp
+  into D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\left4dead2\addons\sourcemod\scripting
+
+put maxplayersaddon.smx
+  into D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\left4dead2\addons\sourcemod\plugins
+
+.sp is a source file 
+.smx is the compiled plugin
+its good practice to have both
+
+################################################################################
+## STEP 8 Install Vote Mode
+################################################################################
+1. Click "Get Plugin" and put the .smx file into your servers 
+  left4dead2\addons\sourcemod\plugins\ folder.
+  
+2. Download "l4d_votemode.cfg" and save to your servers 
+  left4dead2\addons\sourcemod\data\ folder.
+
+3. Download "translations.zip" and extract the "translations" folder to your servers 
+  left4dead2\addons\sourcemod\ folder.
+  so you have
+  left4dead2\addons\sourcemod\translations\
+
+
+################################################################################
+## STEP 9 make server.cfg
+################################################################################
+
+touch D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\left4dead2\cfg\server.cfg
+add 
+
+```
+
+// meta mod is an plugin for l4d2
+// source mod is an plugin for meta mod
+// L4D > metamod > sourcemod
+
+// reminder if it is a l4d2 cvar or a source mod cvar then
+// sm_cvar works for both
+
+///////////////////////////////////////
+// l4d cvars
+///////////////////////////////////////
+sv_cheats 0
+sv_maxplayers 32
+
+sm_cvar sv_gravity_100
+sm_cvar sv_removehumanlimit 1
+sm_cvar sv_force_unreserved 1
+sm_cvar sv_allow_lobby_connect_only 0
+
+sm_cvar mp_limitteams 0
+sm_cvar mp_teams_unbalance_limit 999
+
+
+///////////////////////////////////////
+//// sourcemod cvars
+///////////////////////////////////////
+sm_cvar survivor_limit 32
+sm_cvar z_max_player_zombies 32
+
+///////////////////////////////////////
+
+```
+
+################################################################################
+## test the setup
+################################################################################
+is meta and sm not giving error in console?
+GOOD
+
+can 5 players join ?
+SUCCESS you have a game
+  

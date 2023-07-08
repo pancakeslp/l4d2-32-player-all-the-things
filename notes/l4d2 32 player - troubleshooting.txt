@@ -1,0 +1,43 @@
+
+################################################################################
+## check server setup
+################################################################################
+# meta mod is an plugin for source engine
+# source mod is an plugin for meta mod
+# L4D > metamod > sourcemod
+
+# list plugins (vanila list)
+` plugin_print `
+# shouls mention metamod
+
+  
+# list meta mod plugins
+` meta list `
+# lists "L4DToolZ", SourceMod , and "SDK Tools" which will be the vote tools mod
+
+
+# list Source Mod plugins
+` sm plugins list `
+## should see 
+  "[L4D & L4D2] Vote Mode" (2.1) by SilverShot
+  "maxplayersaddon" (1.0.0.0) by Me
+
+################################################################################
+## TROUBLE SHOOTING
+################################################################################
+
+
+##
+##consistency checking ?!
+##
+are you the server ? 
+Yes -> remove all workshop stuff
+no  -> continue down list
+
+validate listen server ie 
+  D:\Games\Launchers\Steam\steamapps\common\left 4 dead 2\
+
+then copy from 
+  D:\Games\Launchers\Steam\steamapps\common\left 4 dead 2\
+TO
+  D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\

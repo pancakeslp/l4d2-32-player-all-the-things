@@ -1,0 +1,83 @@
+left 32 dead
+
+max observed players
+2019.07.05 8  players
+2022.12.04 17 players
+
+2023 D drive failed
+2023.07.08 12 players 
+
+
+################################################################################
+## CLIENT JOIN
+################################################################################
+
+Hosting  LEFT 4 DEAD 2 - 32 player campaign edition
+
+options > keyboard and mouse > Allow Developer console > enabled
+hit ` (Console button which is the small button above "TAB" and left of "1", and below "ESCAPE"
+
+connect 185.128.10.65
+connect 185.128.10.65:27015
+connect 185.128.10.65:27016
+
+ steam://connect/185.128.10.65
+ steam://connect/185.128.10.65:27016
+ 
+ 
+################################################################################
+## RUN ME
+################################################################################
+
+
+1 launch l4d2 from steam (if you launch it manually it complains you used --insecure)
+1 launch l4d2 from steam (if you launch it manually it complains you used --insecure)
+1 launch l4d2 from steam (if you launch it manually it complains you used --insecure)
+1 launch l4d2 from steam (if you launch it manually it complains you used --insecure)
+   
+2 then run
+  "D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\srcds.exe" 
+  
+2a if VERSUS in SRCDS console do
+   sm_votemode versus  
+
+2b if COOP (after versus) in SRCDS console do
+   sm_votemode coop
+
+  
+3 then exec
+  exec server.cfg
+
+4. http://192.168.1.254/00000111500/gui/#/firewall/portForwarding
+
+5. https://www.whatismyip.com/what-is-my-public-ip-address/
+
+6. Options > keyboard and mouse >  enabled developer console
+
+7. connect <ip>:27015
+
+
+  
+################################################################################
+## Fuck the humans
+################################################################################
+// requires sv cheats 1
+director_force_panic
+
+//spawn X at location of crosshair
+// this requires you to be in the server cant be rcon-ed
+
+z_spawn mob 
+
+z_spawn zombie  // spawn a classic zombie
+z_spawn boomer  // spawn boomer at location of crosshair
+z_spawn hunter  // spawn hunter at location of crosshair
+z_spawn smoker  // spawn smoker at location of crosshair
+z_spawn tank    // spawn tank at location of crosshair
+z_spawn jockey  // spawn jockey at location of crosshair
+z_spawn spitter // spawn spitter at location of crosshair
+z_spawn charger // spawn charger at location of crosshair
+z_spawn witch 
+
+
+  

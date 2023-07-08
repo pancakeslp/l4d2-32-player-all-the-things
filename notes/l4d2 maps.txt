@@ -1,0 +1,115 @@
+In Chronological order
+
+//////////////////////////////////////
+// LEFT 4 DEAD 1
+//////////////////////////////////////
+
+//////////////////////////////////////
+// No Mercy 
+changelevel2 c8m1_apartment
+changelevel2 c8m2_subway
+changelevel2 c8m3_sewers
+changelevel2 c8m4_interior
+changelevel2 c8m5_rooftop
+
+//////////////////////////////////////
+// Crash Course 
+// According to Valve it is meant to bridge the gap between No Mercy and Death Toll.
+// source https//left4dead.fandom.com/wiki/Crash_Course
+changelevel2 c9m1_alleys
+changelevel2 c9m2_lots
+
+//////////////////////////////////////
+// Death Toll 
+changelevel2 c10m1_caves
+changelevel2 c10m2_drainage
+changelevel2 c10m3_ranchhouse
+changelevel2 c10m4_mainstreet
+changelevel2 c10m5_houseboat
+
+//////////////////////////////////////
+// LAST STAND
+// According to the developers, the campaign takes place as an alternative what-if ending to "Death Toll" in the case that the survivors took a different path leading to the Death Toll Finale.
+// source https//left4dead.fandom.com/wiki/The_Last_Stand_(Left_4_Dead_2)
+changelevel2  c14m1_junkyard
+changelevel2  c14m2_lighthouse
+
+//////////////////////////////////////
+// Dead Air 
+changelevel2 c11m1_greenhouse
+changelevel2 c11m2_offices
+changelevel2 c11m3_garage
+changelevel2 c11m4_terminal
+changelevel2 c11m5_runway
+
+//////////////////////////////////////
+// Blood Harvest 
+changelevel2 c12m1_hilltop
+changelevel2 c12m2_traintunnel
+changelevel2 c12m3_bridge
+changelevel2 c12m4_barn
+changelevel2 c12m5_cornfield
+
+//////////////////////////////////////
+// Cold Stream 
+changelevel2 c13m1_alpinecreek
+changelevel2 c13m2_southpinestream
+changelevel2 c13m3_memorialbridge
+changelevel2 c13m4_cutthroatcreek
+
+//////////////////////////////////////
+// The Sacrifice
+changelevel2 c7m1_docks
+changelevel2 c7m2_barge
+changelevel2 c7m3_port
+  
+//////////////////////////////////////
+// LEFT 4 DEAD 2
+//////////////////////////////////////
+
+//////////////////////////////////////
+// Dead Center 
+changelevel2 c1m1_hotel
+changelevel2 c1m2_streets
+changelevel2 c1m3_mall
+changelevel2 c1m4_atrium
+
+//////////////////////////////////////
+// The Passing
+// After escaping from Savannah in Jimmy Gibbs Junior's stock car, Ellis, Nick, Rochelle and Coach find their way blocked
+// source https//left4dead.fandom.com/wiki/The_Riverbank
+changelevel2 c6m1_riverbank
+changelevel2 c6m2_bedlam
+changelevel2 c6m3_port
+
+//////////////////////////////////////
+// Dark Carnival 
+changelevel2 c2m1_highway
+changelevel2 c2m2_fairgrounds
+changelevel2 c2m3_coaster
+changelevel2 c2m4_barns
+changelevel2 c2m5_concert
+
+//////////////////////////////////////
+// Swamp Fever
+changelevel2 c3m1_plankcountry
+changelevel2 c3m2_swamp
+changelevel2 c3m3_shantytown
+changelevel2 c3m4_plantation
+
+//////////////////////////////////////
+// Hard Rain 
+changelevel2 c4m1_milltown_a
+changelevel2 c4m2_sugarmill_a
+changelevel2 c4m3_sugarmill b
+changelevel2 c4m4_milltown_b
+changelevel2 c4m5_milltown_escape
+
+//////////////////////////////////////
+// The Parish 
+changelevel2 c5m1_waterfront
+changelevel2 c5m2_park
+changelevel2 c5m3_cemetery
+changelevel2 c5m4_quarter
+changelevel2 c5m5_bridge
+
