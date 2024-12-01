@@ -1,0 +1,10 @@
+
+
+[2024-12-01 17:17:07] Client version: 1731433425
+[2024-12-01 17:17:07] Connectivity test: Starting test, fetching 'http://test.steampowered.com/204'
+[2024-12-01 17:17:07] [Logged Off, 0, 0] [U:1:0] CCMInterface::SetSteamID( [U:1:0] )
+[2024-12-01 17:17:07] Connectivity test (81.139.59.72:80 (81.139.59.72:80)): OK!
+[2024-12-01 17:17:07] Connectivity test: result=Connected (since 0.0s ago), prev=Unknown, in progress=0
+[2024-12-01 17:17:07] IPv6 HTTP connectivity test (ipv6check-http.steamserver.net / [2a01:bc80:c:100::9b85:e205]:80 ([2a01:bc80:c:100::9b85:e205]:80)) - SUCCESS
+[2024-12-01 17:17:07] IPv6 HTTP connectivity test (ipv6check-http.steamserver.net / [2a01:bc80:c:100::9b85:e205]:80 ([2a01:bc80:c:100::9b85:e205]:80)) - server indicated we are using ipv6, external address = '2a00:23c5:f1a8:fe01:eda7:c5e5:96f4:a50'
+[2024-12-01 17:17:07] IPv6 UDP connectivity test (ipv6check-udp.steamserver.net / [2a01:bc80:c:101::9b85:e216]:27019) - SUCCESS

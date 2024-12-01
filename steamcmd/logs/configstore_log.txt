@@ -1,0 +1,7 @@
+
+
+[2024-12-01 17:17:07] Client version: 1731433425
+[2024-12-01 17:17:07] Failed to read store 'install' from 'E:\workspace\l4d2-32-player-all-the-things\steamcmd\config\config.vdf.tmp'
+[2024-12-01 17:17:07] Failed to read store 'install' from 'E:\workspace\l4d2-32-player-all-the-things\steamcmd\config\config.vdf.tmp'
+[2024-12-01 17:17:07] Failed to read store 'install' from 'E:\workspace\l4d2-32-player-all-the-things\steamcmd\config\config.vdf.tmp'
+[2024-12-01 17:17:07] Flushed store 'install' to 'E:\workspace\l4d2-32-player-all-the-things\steamcmd\config\config.vdf'

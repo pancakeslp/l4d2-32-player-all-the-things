@@ -1,29 +1,33 @@
 
 ########################################################
-## STEP 1A VIA STEAM
+## STEP 1 STEAMCMD
 ########################################################
-Steam > Library > Left 4 Dead 2 Dedicated Server
+
+Get it via 
+https://developer.valvesoftware.com/wiki/SteamCMD
+
+Extract it somewhere like
+  D:\Games\steamcmd
 
 
-########################################################
-## STEP 2 VIA STEAM CMD
-########################################################
-steamcmd
+Double click the EXE 
 
-force_install_dir "D:\Games\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server"
 
-login anonymous 
-
-app_update 222860
-app_update 222860 validate
-
-quit 
+In STEAMCMD
+  force_install_dir "D:\Games\L4D-Dedicated-Server-2024\"
+  
+  login anonymous 
+  
+  app_update 222860
+  app_update 222860 validate
+  
+  quit 
 
 ########################################################
 ## STEP 2 FIX MAPS
 ########################################################
 
-Note for both you might be missing some of the maps when you try via the map list
+You might be missing some of the maps when you try via the map list
 ... which is dumb because the maps are installed, the game isnt aware
 
 find | grep <mission> 
@@ -86,32 +90,60 @@ Vote Mode
 
   
 ################################################################################
-## STEP 4 Install Metamod source ( https://wiki.alliedmods.net/Installing_Metamod:Source )  
+## STEP 4a Install Metamod source ( https://wiki.alliedmods.net/Installing_Metamod:Source )  
 ################################################################################
 extract meta mod into 
   D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\left4dead2
 such that you have 
   D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\left4dead2\addons
-  
+
+################################################################################
+## STEP 4b TEST Metamod source 
+################################################################################
+
+in dedicate server console
+  meta version
   
   
 ################################################################################
-## STEP 5 Install source mod ( https://wiki.alliedmods.net/Installing_SourceMod#Local_Server )  
+## STEP 5a Install source mod ( https://wiki.alliedmods.net/Installing_SourceMod#Local_Server )  
 ################################################################################
 extract source mod into 
   D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\left4dead2
 such that you have 
   D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\left4dead2\addons
   D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\left4dead2\cfg
+
+################################################################################
+## STEP 5b TEST Sourcemod
+################################################################################
+
+in dedicate server console
+  
+  sourcemod_version 
   
   
 ################################################################################
-## STEP 6 Install L4dtoolz
+## STEP 6a Install L4dtoolz
 ################################################################################
 extract source mod into 
   D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\left4dead2
 such that you have 
   D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\left4dead2\addons
+
+################################################################################
+## STEP 6b TEST L4dtoolz
+################################################################################
+
+in dedicate server console
+  meta list
+  
+You should see 
+  
+  Listing 3 plugins:
+    [01] L4DToolZ (2.0.1) by Accelerator, Ivailosp
+    [02] SourceMod (1.12.0.7170) by AlliedModders LLC
+    [03] SDK Tools (1.12.0.7170) by AlliedModders LLC
 
     
 ################################################################################
@@ -126,6 +158,38 @@ put maxplayersaddon.smx
 .sp is a source file 
 .smx is the compiled plugin
 its good practice to have both
+
+
+################################################################################
+## STEP 7b TEST maxplayersaddon
+################################################################################
+
+in dedicate server console
+  sm plugins list
+  
+You should see 
+  
+ [SM] Listing 18 plugins:
+  01 "Admin File Reader" (1.12.0.7170) by AlliedModders LLC
+  02 "Admin Help" (1.12.0.7170) by AlliedModders LLC
+  03 "Admin Menu" (1.12.0.7170) by AlliedModders LLC
+  04 "Anti-Flood" (1.12.0.7170) by AlliedModders LLC
+  05 "Basic Ban Commands" (1.12.0.7170) by AlliedModders LLC
+  06 "Basic Chat" (1.12.0.7170) by AlliedModders LLC
+  07 "Basic Comm Control" (1.12.0.7170) by AlliedModders LLC
+  08 "Basic Commands" (1.12.0.7170) by AlliedModders LLC
+  09 "Basic Info Triggers" (1.12.0.7170) by AlliedModders LLC
+  10 "Basic Votes" (1.12.0.7170) by AlliedModders LLC
+  11 "Client Preferences" (1.12.0.7170) by AlliedModders LLC
+  12 "Fun Commands" (1.12.0.7170) by AlliedModders LLC
+  13 "Fun Votes" (1.12.0.7170) by AlliedModders LLC
+  14 "maxplayersaddon" (1.0.0.0) by Me
+  15 Disabled: "Nextmap" (1.12.0.7170) by AlliedModders LLC
+  16 "Player Commands" (1.12.0.7170) by AlliedModders LLC
+  17 "Reserved Slots" (1.12.0.7170) by AlliedModders LLC
+  18 "Sound Commands" (1.12.0.7170) by AlliedModders LLC
+
+
 
 ################################################################################
 ## STEP 8 Install Vote Mode
@@ -184,7 +248,7 @@ sm_cvar z_max_player_zombies 32
 ```
 
 ################################################################################
-## test the setup
+## STEP 10  test the setup
 ################################################################################
 is meta and sm not giving error in console?
 GOOD
@@ -192,3 +256,4 @@ GOOD
 can 5 players join ?
 SUCCESS you have a game
   
+
