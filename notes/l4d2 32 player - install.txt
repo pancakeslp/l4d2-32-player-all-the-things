@@ -192,60 +192,49 @@ You should see
 
 
 ################################################################################
-## STEP 8 Install Vote Mode
+## STEP 8a Install Survivor_AFK_Fix
 ################################################################################
-1. Click "Get Plugin" and put the .smx file into your servers 
-  left4dead2\addons\sourcemod\plugins\ folder.
-  
-2. Download "l4d_votemode.cfg" and save to your servers 
-  left4dead2\addons\sourcemod\data\ folder.
-
-3. Download "translations.zip" and extract the "translations" folder to your servers 
-  left4dead2\addons\sourcemod\ folder.
-  so you have
-  left4dead2\addons\sourcemod\translations\
-
+https://forums.alliedmods.net/showthread.php?t=326742
 
 ################################################################################
-## STEP 9 make server.cfg
+## STEP 8b TEST Survivor_AFK_Fix
 ################################################################################
 
-touch D:\Games\Launchers\Steam\steamapps\common\Left 4 Dead 2 Dedicated Server\left4dead2\cfg\server.cfg
-add 
+in dedicate server console
+  sm plugins list
 
-```
+You should see
 
-// meta mod is an plugin for l4d2
-// source mod is an plugin for meta mod
-// L4D > metamod > sourcemod
+[SM] Listing 19 plugins:
+  01 "Admin File Reader" (1.12.0.7170) by AlliedModders LLC
+  02 "Admin Help" (1.12.0.7170) by AlliedModders LLC
+  03 "Admin Menu" (1.12.0.7170) by AlliedModders LLC
+  04 "Anti-Flood" (1.12.0.7170) by AlliedModders LLC
+  05 "Basic Ban Commands" (1.12.0.7170) by AlliedModders LLC
+  06 "Basic Chat" (1.12.0.7170) by AlliedModders LLC
+  07 "Basic Comm Control" (1.12.0.7170) by AlliedModders LLC
+  08 "Basic Commands" (1.12.0.7170) by AlliedModders LLC
+  09 "Basic Info Triggers" (1.12.0.7170) by AlliedModders LLC
+  10 "Basic Votes" (1.12.0.7170) by AlliedModders LLC
+  11 "Client Preferences" (1.12.0.7170) by AlliedModders LLC
+  12 "Fun Commands" (1.12.0.7170) by AlliedModders LLC
+  13 "Fun Votes" (1.12.0.7170) by AlliedModders LLC
+  14 "maxplayersaddon" (1.0.0.0) by Me
+  15 Disabled: "Nextmap" (1.12.0.7170) by AlliedModders LLC
+  16 "Player Commands" (1.12.0.7170) by AlliedModders LLC
+  17 "Reserved Slots" (1.12.0.7170) by AlliedModders LLC
+  18 "Sound Commands" (1.12.0.7170) by AlliedModders LLC
+  19 "[L4D2]Survivor_AFK_Fix" (1.0.4) by Lux
 
-// reminder if it is a l4d2 cvar or a source mod cvar then
-// sm_cvar works for both
-
-///////////////////////////////////////
-// l4d cvars
-///////////////////////////////////////
-sv_cheats 0
-sv_maxplayers 32
-
-sm_cvar sv_gravity_100
-sm_cvar sv_removehumanlimit 1
-sm_cvar sv_force_unreserved 1
-sm_cvar sv_allow_lobby_connect_only 0
-
-sm_cvar mp_limitteams 0
-sm_cvar mp_teams_unbalance_limit 999
 
 
-///////////////////////////////////////
-//// sourcemod cvars
-///////////////////////////////////////
-sm_cvar survivor_limit 32
-sm_cvar z_max_player_zombies 32
+################################################################################
+## STEP 9 add  server.cfg
+################################################################################
 
-///////////////////////////////////////
+in the repo we have cfg/server.cfg
 
-```
+
 
 ################################################################################
 ## STEP 10  test the setup

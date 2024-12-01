@@ -1,9 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ## exit on error
 set -e
 
-INSTALL_FOLDER="/d/Games/l4d-dedicated-server-2024"
+./ensure-varible-INSTALL_FOLDER.sh
+
 
 ## THIS folder
 cd "$(dirname "$0")"

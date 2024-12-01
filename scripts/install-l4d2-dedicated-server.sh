@@ -4,9 +4,9 @@
 set -e
 
 ## git bash
-INSTALL_PATH="/d/Games/L4D-Dedicated-Server-2024.2/"
+INSTALL_PATH="/d/Games/L4D-Dedicated-Server-2024/"
 ## WSL
-INSTALL_PATH="/mnt/d/Games/L4D-Dedicated-Server-2024.2/"
+INSTALL_PATH="/mnt/d/Games/L4D-Dedicated-Server-2024/"
 
 echo "I acknowledge i am NOT running this via GIT BASH"
 echo "AND if i am i recognise that STDOUT will be very slow"
