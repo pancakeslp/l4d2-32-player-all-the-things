@@ -11,5 +11,5 @@ cd "$(dirname "$0")"
 cd ../mod-things-raw
 cd maxplayers32addon
 
-cp -rf compiled/maxplayersaddon.smx  $INSTALL_FOLDER/left4dead2/addons/sourcemod/plugins/
-cp -rf maxplayersaddon.sp            $INSTALL_FOLDER/left4dead2/addons/sourcemod/scripting/
+cp -rf compiled/maxplayersaddon.smx  "$INSTALL_FOLDER/left4dead2/addons/sourcemod/plugins/"
+cp -rf maxplayersaddon.sp            "$INSTALL_FOLDER/left4dead2/addons/sourcemod/scripting/"

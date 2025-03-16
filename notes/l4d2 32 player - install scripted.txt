@@ -1,0 +1,31 @@
+
+########################################################
+## STEP 1 STEAMCMD
+########################################################
+install dedicated server somewhere
+if you use steam CMD assume it doesn't honour the path you set
+it will just use steamapps local to it
+
+```
+CMD
+cd scripts
+install-l4d2-dedicated-server.bat
+```
+
+########################################################
+## STEP 2 INSTALL STUFF
+########################################################
+
+via gitbash
+```
+scripts/install.sh
+```
+
+SKIP THIS BELOW INSTALL STEPS JUST TEST STUFF
+
+
+########################################################
+## STEP 3  TEST STUFF
+########################################################
+see "notes/l4d2 32 player - install manual.txt"
+

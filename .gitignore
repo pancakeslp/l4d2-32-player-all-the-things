@@ -1,2 +1,6 @@
 # Default ignored files
 .idea/
+/steamcmd/dumps/
+/steamcmd/logs/
+/steamcmd/steamapps/
+/steamcmd/siteserverui/

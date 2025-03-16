@@ -11,4 +11,4 @@ cd "$(dirname "$0")"
 cd ../mod-things-raw
 cd mmsource*
 
-cp -rf * $INSTALL_FOLDER/left4dead2
+cp -rf * "$INSTALL_FOLDER/left4dead2"

@@ -8,7 +8,7 @@
 
 # list plugins (vanila list)
 ` plugin_print `
-# shouls mention metamod
+# should mention metamod
 
   
 # list meta mod plugins

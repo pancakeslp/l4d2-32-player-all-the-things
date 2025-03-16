@@ -1,0 +1,246 @@
+
+########################################################
+## STEP 1 STEAMCMD
+########################################################
+
+install dedicated server somewhere
+if you use steam CMD assume it doesn't honour the path you set
+it will just use steamapps local to it
+
+Get it via 
+https://developer.valvesoftware.com/wiki/SteamCMD
+
+Extract it somewhere like
+  D:\Games\steamcmd
+
+
+Double click the EXE 
+
+
+In STEAMCMD
+  force_install_dir "D:\Games\L4D-Dedicated-Server-2024\"
+  
+  login anonymous 
+  
+  app_update 222860
+  app_update 222860 validate
+  
+  quit 
+
+########################################################
+## STEP 2 FIX MAPS
+########################################################
+
+You might be missing some of the maps when you try via the map list
+... which is dumb because the maps are installed, the game isnt aware
+
+find | grep <mission> 
+
+#### pancakes autofix ... 
+
+You might be missing some of the maps when you try via the map list
+... which is dumb because the maps are installed, the game isnt aware
+
+VIA GITBASH
+```
+  export L4D_DIR="/d/Games/Launchers/Steam/steamapps/common/Left 4 Dead 2 Dedicated Server"
+  cp scripts/fix_maplist_part1.sh $L4D_DIR
+  cd $L4D_DIR
+
+  ## run this script, which will generate a new script
+  ./fix_maplist_part1.sh
+
+  ## then run the new script
+  ## (which will copy those files into "steamapps/common/Left 4 Dead 2 Dedicated Server/left4dead2" )
+  ./fix_maplist_part2.sh
+```
+
+
+
+########################################################
+## STEP 3 DOWNLOAD MODS
+########################################################
+  
+Metamod Source
+  https://www.sourcemm.net/downloads.php?branch=stable
+
+Source Mod (this requires metamod)
+  https://www.sourcemod.net/downloads.php?branch=stable
+
+L4D Toolz (this requires metamod)
+  https://forums.alliedmods.net/showpost.php?p=2756041&postcount=220
+  https://github.com/Accelerator74/l4dtoolz/releases
+
+Max players (8)
+  https://forums.alliedmods.net/showpost.php?p=826982
+  download the source file ( maxplayersaddon.sp)
+  make a compiled folder adjacent to maxplayersaddon.sp 
+  edit it from 8.0 to 32.0 and compile via SOURCE MOD
+  
+  "C:\workspace\l4d2-32-player-all-the-things\raw\sourcemod-1.11.0-git6934-windows\addons\sourcemod\scripting\compile.exe
+  "Left 4 Dead 2 Dedicated Server\left4dead2\addons\sourcemod\scripting\compile.exe"
+
+  output is in
+  {sp file location}\compiled
+
+Vote Mode  
+  https://forums.alliedmods.net/showthread.php?p=1658942
+
+  
+################################################################################
+## STEP 4a Install Metamod source ( https://wiki.alliedmods.net/Installing_Metamod:Source )  
+################################################################################
+extract meta mod into 
+  Left 4 Dead 2 Dedicated Server\left4dead2
+such that you have 
+  Left 4 Dead 2 Dedicated Server\left4dead2\addons
+
+################################################################################
+## STEP 4b TEST Metamod source 
+################################################################################
+
+in dedicate server console
+  meta version
+  
+  
+################################################################################
+## STEP 5a Install source mod ( https://wiki.alliedmods.net/Installing_SourceMod#Local_Server )  
+################################################################################
+extract source mod into 
+  Left 4 Dead 2 Dedicated Server\left4dead2
+such that you have 
+  Left 4 Dead 2 Dedicated Server\left4dead2\addons
+  Left 4 Dead 2 Dedicated Server\left4dead2\cfg
+
+################################################################################
+## STEP 5b TEST Sourcemod
+################################################################################
+
+in dedicate server console
+  
+  sourcemod_version 
+  
+  
+################################################################################
+## STEP 6a Install L4dtoolz
+################################################################################
+extract source mod into 
+  Left 4 Dead 2 Dedicated Server\left4dead2
+such that you have 
+  Left 4 Dead 2 Dedicated Server\left4dead2\addons
+
+################################################################################
+## STEP 6b TEST L4dtoolz
+################################################################################
+
+in dedicate server console
+  meta list
+  
+You should see 
+  
+  Listing 3 plugins:
+    [01] L4DToolZ (2.0.1) by Accelerator, Ivailosp
+    [02] SourceMod (1.12.0.7170) by AlliedModders LLC
+    [03] SDK Tools (1.12.0.7170) by AlliedModders LLC
+
+    
+################################################################################
+## STEP 7 Install maxplayersaddon
+################################################################################
+put maxplayersaddon.sp
+  into Left 4 Dead 2 Dedicated Server\left4dead2\addons\sourcemod\scripting
+
+put maxplayersaddon.smx
+  into Left 4 Dead 2 Dedicated Server\left4dead2\addons\sourcemod\plugins
+
+.sp is a source file 
+.smx is the compiled plugin
+its good practice to have both
+
+
+################################################################################
+## STEP 7b TEST maxplayersaddon
+################################################################################
+
+in dedicate server console
+  sm plugins list
+  
+You should see 
+  
+ [SM] Listing 18 plugins:
+  01 "Admin File Reader" (1.12.0.7170) by AlliedModders LLC
+  02 "Admin Help" (1.12.0.7170) by AlliedModders LLC
+  03 "Admin Menu" (1.12.0.7170) by AlliedModders LLC
+  04 "Anti-Flood" (1.12.0.7170) by AlliedModders LLC
+  05 "Basic Ban Commands" (1.12.0.7170) by AlliedModders LLC
+  06 "Basic Chat" (1.12.0.7170) by AlliedModders LLC
+  07 "Basic Comm Control" (1.12.0.7170) by AlliedModders LLC
+  08 "Basic Commands" (1.12.0.7170) by AlliedModders LLC
+  09 "Basic Info Triggers" (1.12.0.7170) by AlliedModders LLC
+  10 "Basic Votes" (1.12.0.7170) by AlliedModders LLC
+  11 "Client Preferences" (1.12.0.7170) by AlliedModders LLC
+  12 "Fun Commands" (1.12.0.7170) by AlliedModders LLC
+  13 "Fun Votes" (1.12.0.7170) by AlliedModders LLC
+  14 "maxplayersaddon" (1.0.0.0) by Me
+  15 Disabled: "Nextmap" (1.12.0.7170) by AlliedModders LLC
+  16 "Player Commands" (1.12.0.7170) by AlliedModders LLC
+  17 "Reserved Slots" (1.12.0.7170) by AlliedModders LLC
+  18 "Sound Commands" (1.12.0.7170) by AlliedModders LLC
+
+
+
+################################################################################
+## STEP 8a Install Survivor_AFK_Fix
+################################################################################
+https://forums.alliedmods.net/showthread.php?t=326742
+
+################################################################################
+## STEP 8b TEST Survivor_AFK_Fix
+################################################################################
+
+in dedicate server console
+  sm plugins list
+
+You should see
+
+[SM] Listing 19 plugins:
+  01 "Admin File Reader" (1.12.0.7170) by AlliedModders LLC
+  02 "Admin Help" (1.12.0.7170) by AlliedModders LLC
+  03 "Admin Menu" (1.12.0.7170) by AlliedModders LLC
+  04 "Anti-Flood" (1.12.0.7170) by AlliedModders LLC
+  05 "Basic Ban Commands" (1.12.0.7170) by AlliedModders LLC
+  06 "Basic Chat" (1.12.0.7170) by AlliedModders LLC
+  07 "Basic Comm Control" (1.12.0.7170) by AlliedModders LLC
+  08 "Basic Commands" (1.12.0.7170) by AlliedModders LLC
+  09 "Basic Info Triggers" (1.12.0.7170) by AlliedModders LLC
+  10 "Basic Votes" (1.12.0.7170) by AlliedModders LLC
+  11 "Client Preferences" (1.12.0.7170) by AlliedModders LLC
+  12 "Fun Commands" (1.12.0.7170) by AlliedModders LLC
+  13 "Fun Votes" (1.12.0.7170) by AlliedModders LLC
+  14 "maxplayersaddon" (1.0.0.0) by Me
+  15 Disabled: "Nextmap" (1.12.0.7170) by AlliedModders LLC
+  16 "Player Commands" (1.12.0.7170) by AlliedModders LLC
+  17 "Reserved Slots" (1.12.0.7170) by AlliedModders LLC
+  18 "Sound Commands" (1.12.0.7170) by AlliedModders LLC
+  19 "[L4D2]Survivor_AFK_Fix" (1.0.4) by Lux
+
+
+
+################################################################################
+## STEP 9 add  server.cfg
+################################################################################
+
+in the repo we have cfg/server.cfg
+
+
+
+################################################################################
+## STEP 10  test the setup
+################################################################################
+is meta and sm not giving error in console?
+GOOD
+
+can 5 players join ?
+SUCCESS you have a game
+  
+
